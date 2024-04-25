@@ -1,0 +1,22 @@
+{% extends '_templates/base.njk' %}
+
+{% block content %}
+<div class="container">
+  <h1> Hope you're hungry... </h1>
+  <p>Check out some of Austin's most popular and delicious restaurants!</p>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+  {% for restaurant in restaurants.restaurants %}
+  <div class="col">
+    <div class="card h-100">
+      <img src="img/{{ restaurant.image }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h2> {{ restaurant.name }} </h2>
+        <p> {{ restaurant.address }} </p>
+        <p> {{ restaurant.category }} <p>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+ </div>
+</div>
+{% endblock %}

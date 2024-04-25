@@ -2,19 +2,20 @@
 
 {% block content %}
 <div class="container">
-  <p>Meow</p>
+  <h1> Welcome to Austin! </h1>
+  <p>Visiting Austin? You've come to the right place! On this website, you will find an array of Austin's coolest landmarks and most delicious bites to eat. Explore and create your perfect itinerary! </p>
   <div class="row row-cols-1 row-cols-md-2 g-4">
   {% for landmark in landmarks.landmarks %}
   <div class="col">
     <div class="card h-100">
       <img src="img/{{ landmark.image }}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h2>  <a href= {{ relative_path}} landmarks/{{ landmark.slug }}.html class="card-link"> {{ landmark.name }} </h2>
+        <h2>  <a href="{{ relative_path}}landmarks/{{ landmark.slug }}.html" class="card-link"> {{ landmark.name }} </a> </h2>
         <p> {{ landmark.established }} </p>
         <p> {{ landmark.activities }} <p>
       </div>
       <div class="card-footer">
-        <a href= "{{ landmarks.url }}" class="card-link">Visit their website</a>
+        <a href= "{{ landmark.url }}" class="card-link">Visit their website</a>
       </div>
     </div>
   </div>
